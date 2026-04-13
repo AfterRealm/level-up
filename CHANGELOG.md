@@ -10,4 +10,4 @@
 - Subagent architecture: heavy scanning stays out of main context
 - Python scanner script with JSON output, `--help`, structured error handling
 - Description optimized via skill-creator eval loop (5 iterations)
-- Blunt Cake roasted (Snoop Dogg, 7/10) — all 6 findings fixed
+- Blunt Cake roasted x2 (Snoop Dogg) — 7/10 round 1, 9/10 round 2, all findings fixed
