@@ -146,7 +146,7 @@ def action_promote(name, project):
     }, indent=2))
 
 
-def action_demote(name, project):
+def action_demote(name, project, dry_run=False):
     """Move a global agent to a specific project."""
     agent = find_agent(name, "global")
     if not agent:
@@ -154,14 +154,30 @@ def action_demote(name, project):
         sys.exit(1)
 
     proj_dir = get_desktop_path() / project / ".claude" / "agents"
-    proj_dir.mkdir(parents=True, exist_ok=True)
     dest = proj_dir / f"{name}.md"
 
     if dest.exists():
         print(json.dumps({"error": f"Agent '{name}' already exists in project '{project}'"}), file=sys.stderr)
         sys.exit(1)
 
+    if dry_run:
+        print(json.dumps({
+            "action": "demote_preview",
+            "name": name,
+            "from": agent["path"],
+            "to": str(dest),
+            "message": f"Would copy '{name}' to {project} and remove from global"
+        }, indent=2))
+        return
+
+    proj_dir.mkdir(parents=True, exist_ok=True)
     shutil.copy2(agent["path"], dest)
+
+    # Verify copy succeeded before removing original
+    if not dest.exists():
+        print(json.dumps({"error": f"Copy to '{dest}' failed — original NOT removed"}), file=sys.stderr)
+        sys.exit(1)
+
     os.remove(agent["path"])
     print(json.dumps({
         "action": "demoted",
@@ -179,6 +195,7 @@ def main():
                         help="Action to perform")
     parser.add_argument("--name", help="Agent name (without .md)")
     parser.add_argument("--project", help="Project name (folder name on Desktop)")
+    parser.add_argument("--dry-run", action="store_true", help="Preview the action without making changes")
 
     args = parser.parse_args()
 
@@ -198,7 +215,7 @@ def main():
         if not args.name or not args.project:
             print(json.dumps({"error": "--name and --project required for demote"}), file=sys.stderr)
             sys.exit(1)
-        action_demote(args.name, args.project)
+        action_demote(args.name, args.project, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
