@@ -47,6 +47,8 @@ PROJECT_NAME (count): agent1, agent2, agent3
 ...one line per project, agents comma-separated. Include model in parens if set. Nothing else.")
 ```
 
+If the scan returns zero agents, skip the action menu entirely and offer: "No agents found anywhere. Want to create your first one?" Then go directly to the Create flow.
+
 Present the summary to the user in this format:
 
 ```
@@ -100,7 +102,7 @@ Report the result.")
 **Template & adapt** — spawn subagent:
 ```
 Agent(description: "Adapt agent", prompt: "Run: python \"<RESOLVED_SCANNER_PATH>\" --action inspect --name \"AGENT_NAME\"
-Read the full agent source. Identify project-specific references (hardcoded paths, project names, project-specific tools, data references). Rewrite the agent to be generic — replace specific paths with general instructions, broaden scope, keep core role and personality. Return ONLY the adapted markdown content, nothing else.")
+Read the full agent source. Identify project-specific references (hardcoded paths, project names, project-specific tools, data references). Rewrite the agent to be generic — replace specific paths with general instructions, broaden scope, keep core role and personality. If the agent has no project-specific references, state that clearly before returning the content unchanged. Return ONLY the adapted markdown content (or the no-changes notice + original content), nothing else.")
 ```
 
 Show the adapted version to the user. AskUserQuestion: Save it / Edit first. If approved, write to `~/.claude/agents/AGENT_NAME.md`.
