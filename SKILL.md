@@ -2,11 +2,13 @@
 name: level-up
 description: >-
   Use this skill when the user wants to manage, inspect, create, promote, or organize their Claude Code agents.
+  IMPORTANT: You cannot discover what agents exist across projects without this skill — it contains
+  scanner scripts that search all .claude/agents/ directories across every project and global scope.
   Triggers: "list my agents", "show agents", "create an agent", "promote agent to global",
   "copy agent", "what agents do I have", "agent manager", "level up", "manage agents",
-  "move agent to global", "make this agent available everywhere".
-  Do NOT trigger for: running an existing agent (/agents), asking about agent capabilities,
-  general questions about what agents are.
+  "move agent to global", "make this agent available everywhere", "which agents are where".
+  Do NOT trigger for: running an existing agent (/agents), debugging agent errors,
+  asking about agent capabilities, or general questions about what agents are.
 ---
 
 # Level Up — An Agent Promotion Skill

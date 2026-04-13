@@ -1,0 +1,1390 @@
+{
+  "exit_reason": "max_iterations (5)",
+  "original_description": "Use this skill when the user wants to manage, inspect, create, promote, or organize their Claude Code agents. Triggers: \"list my agents\", \"show agents\", \"create an agent\", \"promote agent to global\", \"copy agent\", \"what agents do I have\", \"agent manager\", \"level up\", \"manage agents\", \"move agent to global\", \"make this agent available everywhere\". Do NOT trigger for: running an existing agent (/agents), asking about agent capabilities, general questions about what agents are.",
+  "best_description": "Use this skill when the user wants to manage, inspect, create, promote, or organize their Claude Code agents. Triggers: \"list my agents\", \"show agents\", \"create an agent\", \"promote agent to global\", \"copy agent\", \"what agents do I have\", \"agent manager\", \"level up\", \"manage agents\", \"move agent to global\", \"make this agent available everywhere\". Do NOT trigger for: running an existing agent (/agents), asking about agent capabilities, general questions about what agents are.",
+  "best_score": "4/8",
+  "best_train_score": "6/12",
+  "best_test_score": "4/8",
+  "final_description": "Use this skill when the user wants to list, find, promote, demote, move, copy, or create Claude Code agents. IMPORTANT: You cannot discover what agents exist across projects without this skill \u00e2\u20ac\u201d it contains scanner scripts that search all .claude/agents/ directories across every project and global scope. Any question about \"what agents do I have\", \"show my agents\", \"which agents are where\", or any request to promote/demote/move an agent between project and global scope REQUIRES this skill. Also use for creating new agent .md files. Do NOT use for: running agents, debugging agent errors, or explaining what agents are.",
+  "iterations_run": 5,
+  "holdout": 0.4,
+  "train_size": 12,
+  "test_size": 8,
+  "history": [
+    {
+      "iteration": 1,
+      "description": "Use this skill when the user wants to manage, inspect, create, promote, or organize their Claude Code agents. Triggers: \"list my agents\", \"show agents\", \"create an agent\", \"promote agent to global\", \"copy agent\", \"what agents do I have\", \"agent manager\", \"level up\", \"manage agents\", \"move agent to global\", \"make this agent available everywhere\". Do NOT trigger for: running an existing agent (/agents), asking about agent capabilities, general questions about what agents are.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "manage my agents.. I think some of them have outdated descriptions and I want to see what's in them",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I need to create a new agent for my Learning Claude project. It should be a tutor that explains code concepts in simple terms, runs on sonnet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "level up",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you copy the Economist agent from Waevera World and adapt it as a template for a general financial advisor agent I can use in any project?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you spawn a subagent to research the best practices for writing CLAUDE.md files?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "/agents morpheus",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me write a new skill that automatically formats my markdown files when I save them",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I need to set up an MCP server for my project, something that connects to my SQLite database",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "description": "Use this skill when the user wants to list, inventory, promote, demote, create, or reorganize their Claude Code agent files (.claude/agents/*.md). This skill has scanner scripts that find agents across all projects and global scope \u00e2\u20ac\u201d use it whenever the user asks \"what agents do I have\", wants to see agents in a specific project, wants to know which agents are global vs project-scoped, wants to move/copy/promote an agent from one project to global, demote a global agent back to a project, or create a new agent from scratch. Covers any agent inventory, agent scope management, or agent file organization task. Do NOT use for: running an existing agent, debugging agent behavior, asking what agents are conceptually, or discussing agent architecture.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "manage my agents.. I think some of them have outdated descriptions and I want to see what's in them",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I need to create a new agent for my Learning Claude project. It should be a tutor that explains code concepts in simple terms, runs on sonnet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "level up",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you copy the Economist agent from Waevera World and adapt it as a template for a general financial advisor agent I can use in any project?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "/agents morpheus",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you spawn a subagent to research the best practices for writing CLAUDE.md files?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I need to set up an MCP server for my project, something that connects to my SQLite database",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me write a new skill that automatically formats my markdown files when I save them",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "description": "Use this skill whenever the user mentions their agents and wants to see, list, find, promote, demote, move, copy, or create Claude Code agent files. This skill contains scanner scripts that discover agents across every project and global scope \u00e2\u20ac\u201d capabilities you don't have without it. Trigger examples: \"show me my agents\", \"what agents do I have\", \"promote X to global\", \"move X back to project\", \"which agents are global vs project-scoped\", \"make an agent available everywhere\", or any request involving agent inventory or agent scope changes. Do NOT use for: running/executing an agent, debugging agent errors, or conceptual questions about what agents are.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "manage my agents.. I think some of them have outdated descriptions and I want to see what's in them",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I need to create a new agent for my Learning Claude project. It should be a tutor that explains code concepts in simple terms, runs on sonnet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "level up",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you spawn a subagent to research the best practices for writing CLAUDE.md files?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you copy the Economist agent from Waevera World and adapt it as a template for a general financial advisor agent I can use in any project?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "/agents morpheus",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I need to set up an MCP server for my project, something that connects to my SQLite database",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me write a new skill that automatically formats my markdown files when I save them",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 4,
+      "description": "Use this skill when the user wants to know what agents they have, where their agents live, or change where an agent lives. Covers: listing/inventorying agents across projects, checking which project an agent is in, promoting a project agent to global scope, demoting a global agent back to a specific project, copying or adapting agents between scopes, and creating new agent files from scratch. This skill has scanner scripts that discover all .claude/agents/*.md files across every project and global scope. Do NOT use for: executing/running an agent, debugging agent behavior, or explaining what agents are conceptually.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "manage my agents.. I think some of them have outdated descriptions and I want to see what's in them",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I need to create a new agent for my Learning Claude project. It should be a tutor that explains code concepts in simple terms, runs on sonnet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "level up",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you copy the Economist agent from Waevera World and adapt it as a template for a general financial advisor agent I can use in any project?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "/agents morpheus",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you spawn a subagent to research the best practices for writing CLAUDE.md files?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I need to set up an MCP server for my project, something that connects to my SQLite database",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me write a new skill that automatically formats my markdown files when I save them",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    },
+    {
+      "iteration": 5,
+      "description": "Use this skill when the user wants to list, find, promote, demote, move, copy, or create Claude Code agents. IMPORTANT: You cannot discover what agents exist across projects without this skill \u00e2\u20ac\u201d it contains scanner scripts that search all .claude/agents/ directories across every project and global scope. Any question about \"what agents do I have\", \"show my agents\", \"which agents are where\", or any request to promote/demote/move an agent between project and global scope REQUIRES this skill. Also use for creating new agent .md files. Do NOT use for: running agents, debugging agent errors, or explaining what agents are.",
+      "train_passed": 6,
+      "train_failed": 6,
+      "train_total": 12,
+      "train_results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "test_passed": 4,
+      "test_failed": 4,
+      "test_total": 8,
+      "test_results": [
+        {
+          "query": "manage my agents.. I think some of them have outdated descriptions and I want to see what's in them",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I need to create a new agent for my Learning Claude project. It should be a tutor that explains code concepts in simple terms, runs on sonnet",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "level up",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you copy the Economist agent from Waevera World and adapt it as a template for a general financial advisor agent I can use in any project?",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you spawn a subagent to research the best practices for writing CLAUDE.md files?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "/agents morpheus",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "help me write a new skill that automatically formats my markdown files when I save them",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I need to set up an MCP server for my project, something that connects to my SQLite database",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ],
+      "passed": 6,
+      "failed": 6,
+      "total": 12,
+      "results": [
+        {
+          "query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "can you promote my Housekeeper agent to global? it's currently only in Command Center",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "list my agents and tell me which ones are global vs project-specific",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first",
+          "should_trigger": true,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": false
+        },
+        {
+          "query": "what are agents in claude code? like how do they work and when should I use them vs skills?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "I want to create a new Claude Code plugin that other people can install from my marketplace",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "can you update my settings.json to add a new hook that runs before every commit?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "run the housekeeper agent on this project, it's getting messy in here",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        },
+        {
+          "query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?",
+          "should_trigger": false,
+          "trigger_rate": 0.0,
+          "triggers": 0,
+          "runs": 3,
+          "pass": true
+        }
+      ]
+    }
+  ]
+}

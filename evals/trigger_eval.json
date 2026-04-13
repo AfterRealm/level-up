@@ -1,0 +1,22 @@
+[
+  {"query": "hey can you show me all the agents I have set up? I know I've got some in my ark project and a few global ones but I can't remember what's where", "should_trigger": true},
+  {"query": "I want to take my Maid agent from Waevera and make it work globally so I can use it in any project, but strip out the waevera-specific stuff first", "should_trigger": true},
+  {"query": "level up", "should_trigger": true},
+  {"query": "I need to create a new agent for my Learning Claude project. It should be a tutor that explains code concepts in simple terms, runs on sonnet", "should_trigger": true},
+  {"query": "can you promote my Housekeeper agent to global? it's currently only in Command Center", "should_trigger": true},
+  {"query": "what agents do I have in my Vox Memori project? I think there's an architect and a neurologist but I'm not sure if there are more", "should_trigger": true},
+  {"query": "I want to move Morpheus back from global to just the Vox Memori project, it doesn't need to be everywhere", "should_trigger": true},
+  {"query": "manage my agents.. I think some of them have outdated descriptions and I want to see what's in them", "should_trigger": true},
+  {"query": "can you copy the Economist agent from Waevera World and adapt it as a template for a general financial advisor agent I can use in any project?", "should_trigger": true},
+  {"query": "list my agents and tell me which ones are global vs project-specific", "should_trigger": true},
+  {"query": "run the housekeeper agent on this project, it's getting messy in here", "should_trigger": false},
+  {"query": "what are agents in claude code? like how do they work and when should I use them vs skills?", "should_trigger": false},
+  {"query": "/agents morpheus", "should_trigger": false},
+  {"query": "can you spawn a subagent to research the best practices for writing CLAUDE.md files?", "should_trigger": false},
+  {"query": "I need to set up an MCP server for my project, something that connects to my SQLite database", "should_trigger": false},
+  {"query": "help me write a new skill that automatically formats my markdown files when I save them", "should_trigger": false},
+  {"query": "my fasciculus agent keeps failing when it tries to write to the brain, can you debug it?", "should_trigger": false},
+  {"query": "can you update my settings.json to add a new hook that runs before every commit?", "should_trigger": false},
+  {"query": "I want to create a new Claude Code plugin that other people can install from my marketplace", "should_trigger": false},
+  {"query": "tell me about the agent architecture in my Ark Claude project, how do the BP Architect and Structural Engineer work together?", "should_trigger": false}
+]
