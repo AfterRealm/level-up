@@ -8,7 +8,6 @@ Manage, inspect, create, and promote your Claude Code agents across projects and
 - **Inspect** any agent's full source
 - **Promote** a project agent to global (direct copy or template & adapt)
 - **Create** new agents with guided setup
-- **Demote** a global agent back to a specific project
 
 ## How It Works
 

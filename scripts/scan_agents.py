@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
 Level Up — Agent Scanner
-Discovers, inspects, promotes, and demotes Claude Code agents.
+Discovers, inspects, and promotes Claude Code agents.
 
 Usage:
   scan_agents.py --action list                              List all agents
-  scan_agents.py --action inspect --name NAME               Show agent details
+  scan_agents.py --action inspect --name NAME [--project P] Show agent details
   scan_agents.py --action promote --name NAME --project P   Copy project agent to global
-  scan_agents.py --action demote --name NAME --project P    Move global agent to project
   scan_agents.py --help                                     Show this help
 """
 
@@ -105,9 +104,9 @@ def action_list():
     print(json.dumps({"agents": agents, "total": len(agents)}, indent=2))
 
 
-def action_inspect(name):
+def action_inspect(name, project=None):
     """Show full details of a specific agent."""
-    agent = find_agent(name)
+    agent = find_agent(name, project)
     if not agent:
         print(json.dumps({"error": f"Agent '{name}' not found"}), file=sys.stderr)
         sys.exit(1)
@@ -147,7 +146,7 @@ def action_promote(name, project):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Level Up — Agent Scanner. Discover, inspect, promote, and demote Claude Code agents."
+        description="Level Up — Agent Scanner. Discover, inspect, and promote Claude Code agents."
     )
     parser.add_argument("--action", required=True, choices=["list", "inspect", "promote"],
                         help="Action to perform")
@@ -161,7 +160,7 @@ def main():
         if not args.name:
             print(json.dumps({"error": "--name required for inspect"}), file=sys.stderr)
             sys.exit(1)
-        action_inspect(args.name)
+        action_inspect(args.name, args.project)
     elif args.action == "promote":
         if not args.name or not args.project:
             print(json.dumps({"error": "--name and --project required for promote"}), file=sys.stderr)
