@@ -64,7 +64,6 @@ AskUserQuestion with 4 options:
 1. **Inspect** — View the full source of an agent
 2. **Promote & Adapt** — Copy or adapt an agent to a different scope
 3. **Create** — Build a new agent from scratch
-4. **Demote** — Move a global agent back to a project
 
 ### Agent Picker (used by ALL actions except Create)
 
@@ -148,16 +147,6 @@ You are [role description]. When invoked, you [what the agent does].
 - **Simple reviewer:** Reads code files, checks for issues, reports findings
 - **Subagent worker:** Runs scripts, processes output, returns compact results
 - **Project specialist:** Deep knowledge of one project, handles project-specific tasks
-
-### If Demote
-
-Agent picker filtered to Global agents only (skip Step A). Then project picker for destination. Spawn subagent:
-```
-Agent(description: "Demote agent", prompt: "Run: python \"<RESOLVED_SCANNER_PATH>\" --action demote --dry-run --name \"AGENT_NAME\" --project \"PROJECT\"
-Show what would happen. Ask for confirmation before running without --dry-run.")
-```
-
-After user confirms, run again without `--dry-run`.
 
 ## Important Notes
 
