@@ -1,23 +1,32 @@
-# Level Up — An Agent Promotion Skill
+# Level Up — Agent Management Skill
 
-Manage, inspect, create, and promote your Claude Code agents across projects and global scope.
+Inspect, promote, merge, and analyze usage of your Claude Code agents across projects and global scope.
 
 ## What It Does
 
-- **List** all your agents across every project and global scope
+- **Scan** every `.claude/agents/` directory on your machine — global + all Desktop projects — and list them grouped by project
 - **Inspect** any agent's full source
-- **Promote** a project agent to global (direct copy or template & adapt)
-- **Create** new agents with guided setup
+- **Promote & Adapt** a project agent to global (direct copy, or rewrite to strip project-specific references)
+- **Merge** two agents into one, with section-by-section combination
+- **Stats** — analyze real token costs per agent from your session history, including turn counts, work vs cache breakdown, and your current weekly budget utilization
+- **Optimize** — after stats, get AI-generated audit suggestions for any agent to reduce turns, cache growth, or bloat
 
 ## How It Works
 
-Level Up scans your `~/.claude/agents/` (global) and all Desktop project `.claude/agents/` directories to find every agent you have. It presents them through paginated menus so you can browse, inspect, and manage them without leaving your session.
+Level Up is built around a **minimal-interaction** philosophy: one menu per invocation, plain chat for follow-ups. Every picker is a full context re-read, so the skill keeps them to a minimum.
 
-Heavy operations (scanning, inspecting, adapting) run in subagents to save your main session's context window.
+Heavy work (scanning, inspecting, merging, stats) runs in subagents to save your main session's context window. User interaction stays in the main thread.
 
-### Template & Adapt
+### The Stats Feature
 
-The standout feature: take any project-specific agent and intelligently adapt it for global use. Level Up reads the source, strips project-specific references (hardcoded paths, project names, scoped tools), rewrites it as a generic version, and shows you the draft for approval before saving.
+`agent_stats.py` scans your Claude Code session JSONL files — parent sessions for agent identity, subagent files for real token costs — and gives you the full picture:
+
+- **Work tokens** — what the agent actually input/output
+- **Cache tokens** — the context-loading overhead that counts against your weekly usage cap
+- **Turns** — how many tool-call round trips an agent makes per invocation (the main cost driver)
+- **Weekly budget** — your current 7-day utilization from Anthropic's usage API
+
+This makes it trivial to see *why* an agent is expensive, not just *that* it is. The optimization audit feature then reads the agent's definition and suggests specific edits — batched reads, scope caps, turn reduction — to bring the cost down.
 
 ## Install
 
@@ -30,17 +39,24 @@ Or manually copy to `~/.claude/skills/level-up/`.
 ## Usage
 
 Just say:
-- "level up"
-- "list my agents"
-- "show my agents"
-- "promote an agent to global"
-- "create a new agent"
-- "manage agents"
+- "level up" or "manage agents"
+- "list my agents" or "show my agents"
+- "inspect [agent name]"
+- "promote [agent] to global"
+- "merge agents"
+- "agent stats" or "agent usage"
+- "which agents are unused"
 
 ## Requirements
 
-- Python 3.x (for the scanner script)
+- Python 3.x (for the scanner scripts)
 - Claude Code CLI
+
+## Notes
+
+Per-agent token costs are approximate — matched by timestamp proximity between parent invocations and subagent files (no direct link exists in the JSONL format). Totals and invocation counts are accurate.
+
+Agent creation is handled natively by Claude — no skill needed. Just describe what you want.
 
 ## Author
 
