@@ -18,9 +18,11 @@ Ever lose track of what agents you have scattered across projects? Worse — eve
 
 **Install:**
 ```
+claude marketplace add AfterRealm/marketplace
 claude plugin add afterrealm/level-up
 ```
 
+Marketplace: https://github.com/AfterRealm/marketplace
 GitHub: https://github.com/AfterRealm/level-up
 
 4th AfterRealm plugin.

@@ -31,8 +31,11 @@ This makes it trivial to see *why* an agent is expensive, not just *that* it is.
 ## Install
 
 ```bash
+claude marketplace add AfterRealm/marketplace
 claude plugin add afterrealm/level-up
 ```
+
+Marketplace: https://github.com/AfterRealm/marketplace
 
 Or manually copy to `~/.claude/skills/level-up/`.
 
